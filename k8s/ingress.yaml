@@ -8,6 +8,9 @@ metadata:
     nginx.ingress.kubernetes.io/cors-allow-origin: "*"
     nginx.ingress.kubernetes.io/cors-allow-methods: "PUT, GET, POST, OPTIONS, DELETE"
     nginx.ingress.kubernetes.io/cors-allow-headers: "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization"
+    nginx.ingress.kubernetes.io/enable-access-log: "true"
+    # Enable Prometheus metrics for the ingress itself
+    nginx.ingress.kubernetes.io/enable-vts-status: "true"
 spec:
   rules:
   - host: arch.homework

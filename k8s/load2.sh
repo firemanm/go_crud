@@ -2,7 +2,7 @@
   print "=== VARIABLE LOAD TEST ==="
   print "Target: " minikube_ip
   
-  total_duration = 3 * 60  # в секундах
+  total_duration = 15 * 60  # в секундах
   start_time = systime()
   end_time = start_time + total_duration
   request_count = 0
