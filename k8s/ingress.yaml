@@ -10,7 +10,17 @@ metadata:
     nginx.ingress.kubernetes.io/cors-allow-headers: "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization"
     nginx.ingress.kubernetes.io/enable-access-log: "true"
     # Enable Prometheus metrics for the ingress itself
-    nginx.ingress.kubernetes.io/enable-vts-status: "true"
+    # nginx.ingress.kubernetes.io/enable-opentelemetry: "true"
+    # nginx.ingress.kubernetes.io/satisfy: "any"
+    
+    # nginx.ingress.kubernetes.io/auth-type: "basic"
+    # nginx.ingress.kubernetes.io/enable-global-auth: "false"
+
+
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "80"
+    # prometheus.io/path: "/metrics"
+    # prometheus.io/scheme: "http"
 spec:
   rules:
   - host: arch.homework
@@ -37,6 +47,7 @@ spec:
             name: go-crud-app-svc
             port:
               number: 80
+
       - path: /metrics
         pathType: Prefix
         backend:
