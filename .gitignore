@@ -1,3 +1,4 @@
 go_crud
 *.exe
 .env
+minikube-config

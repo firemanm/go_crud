@@ -1,0 +1,19 @@
+apiVersion: skaffold/v4beta13
+kind: Config
+metadata:
+  name: go-crud-app
+build:
+  artifacts:
+    - image: firemanm/go-crud-app
+      docker:
+        dockerfile: Dockerfile
+  tagPolicy:
+    envTemplate:
+      template: "latest"  # Всегда использовать latest тег
+manifests:
+  rawYaml:
+    - k8s/configmap.yaml
+    - k8s/deployment.yaml
+    - k8s/ingress.yaml
+    - k8s/secret.yaml
+    - k8s/svc.yaml
